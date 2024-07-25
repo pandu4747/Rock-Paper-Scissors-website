@@ -34,11 +34,11 @@ function autoPlay() {
 /*We know every EVENTLISTENER have an eventObject.Here event is an EVENT OBJECT and it has a feature called key which get us what input we have given to it.*/
 document.body.addEventListener('keydown', (event) => {
   if (event.key === 'r') {
-    resultCheck('ROCK');
+    resultCheck('rock');
   } else if (event.key === 'p') {
-    resultCheck('PAPER');
+    resultCheck('paper');
   } else if (event.key === 's') {
-    resultCheck('SCISSORS');
+    resultCheck('scissors');
   }
 });
 
@@ -46,28 +46,28 @@ function resultCheck(yourMove) {
   const compMove = selectcompMove();
   let result = "";
 
-  if (yourMove === "ROCK") {
-    if (compMove === "ROCK") {
+  if (yourMove === "rock") {
+    if (compMove === "rock") {
       result = "Draw";
-    } else if (compMove === "PAPER") {
+    } else if (compMove === "paper") {
       result = "Better luck next time";
-    } else if (compMove === "SCISSORS") {
+    } else if (compMove === "scissors") {
       result = "You won the game";
     }
-  } else if (yourMove === "PAPER") {
-    if (compMove === "ROCK") {
+  } else if (yourMove === "paper") {
+    if (compMove === "rock") {
       result = "You won the game";
-    } else if (compMove === "PAPER") {
+    } else if (compMove === "paper") {
       result = "Draw";
-    } else if (compMove === "SCISSORS") {
+    } else if (compMove === "scissors") {
       result = "Better luck next time";
     }
-  } else if (yourMove === "SCISSORS") {
-    if (compMove === "ROCK") {
+  } else if (yourMove === "scissors") {
+    if (compMove === "rock") {
       result = "Better luck next time";
-    } else if (compMove === "PAPER") {
+    } else if (compMove === "paper") {
       result = "You won the game";
-    } else if (compMove === "SCISSORS") {
+    } else if (compMove === "scissors") {
       result = "Draw";
     }
   }
