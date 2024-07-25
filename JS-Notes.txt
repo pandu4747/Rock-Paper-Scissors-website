@@ -1,0 +1,569 @@
+HTML ---> creates the content.
+CSS  ---> changes the appearences.
+JS   ---> makes it interactive.
+
+Strategy for JavaScript:
+--->Think about what steps we need.
+--->Convert those steps into code. 
+
+Steps to follow while creating websites with JS:
+--->Store the data.
+--->Generate the HTML.
+--->Make it interactive.
+
+SCRIPT element will run when ever the page is loaded.
+Console.log is used to redirect the code back to the console.
+To load JS inside HTML document we use SCRIPT element and also bt ONCLICK attribute.
+Js has a SEMI-COLON INSERTION feature which automatically add a semi-colon at the end of the code.
+Template Strings, syntax is backtick (`).This is another way to create a string. This has a special feature called INTERPOLATION - means, inserting a value into a string directly by using ${}.
+Kebab-case is one of the naming-conventions which is represented by (tarak-eshwar). This is not used in JS, beacause (-) is already represented as minus. This is used in HTML and CSS.
+Pascal-case ---> TarakEshwar
+Camel-case ---> tarakEshwar
+Snake-case ---> tarak_eshwar (not used in JS)
+3 ways to create a variable in JS --> let(value can be changed later), const(value cannot be change later), var(means variable and it's value can be changed later and we do not use this in JS as it do not follow rules of SCOPE).
+== ---> converts the both values into same type and then compares both values.
+=== ---> checks the values without converting into same type. This solves the conversion behavior of (==).
+We dont use (==) and (!=) in JS to avoid the conversion behavior issue.
+
+PRIORITY ORDER ---> (),*/,+-,comparison operators,logical operators.
+
+Math.random generates a number between 0 and 1 (0=<number<1).
+
+Falsy value - the value which behaves like a false.
+            - false, 0, '', NaN, undefined, null
+
+DIFF. B/W NULL & UNDEFINED?
+      NULL = used when we intentionally want something to empty. 
+
+Truthy value - the value which behaves lika a true.
+
+Instead of doing comparisons we can use truthy and falsy values as shortcuts.And these values can also work with logical operators.
+    - eg. console.log(!0) ---> true
+
+NaN - Not a Number, we get this when we do some invalid math.
+    - eg. console.log('text' / 5) ---> NaN
+Undefined - represents something that doesn't have a value.
+          - we can use this with let but not with const. If you want to use it with const then we directly need to define it as undefined.
+          - eg. let a='';                       const a ='undefined';
+                console.log(a) ---> undefined    console.log(a)  --> undefined
+
+Shortcuts for IF-statements:
+
+(i)Ternary Operator ?:
+      -shortcut for if-else statement
+      -syntax:  condition ? if : else
+      - advantage of ternary operator is we can save this in a variable.
+      - eg. const result = true ? 'truthy' : 'falsy';
+            console.log(result) ---> truthy
+(ii)Guard Operator &&
+      -shortcut for if statement
+      -it resolves the SHORT CIRCUIT EVALUATION
+      -SCE --> means the scenario false && conditon2 in AND. Here, the AND operator doen't even run because of already one conditon is false.
+      -we can save the guard operator in a variable.
+      -eg. const message = false && 'hello';      const message = 5 && 'hello';
+           console.log(message); ---> false        console.log(message); ---> true
+(iii)Default Operator ||
+      -shortcut for if statement
+      -it resolves the SCE means, the scenario true || conditon2 in OR. Here, the OR operator doesn't even check for condtion2 as already one condition is true.So, it stops early.
+
+FUNCTIONS:      
+      -lets us reuse code
+      -syntax: function functionname(){}
+      -make our code easy to update
+  RETURN Statement:
+      - let us get a value out of a function
+      - if a function doesn't have a return statement or we return without a value then, we get output as Undefined.
+      -when we use a return satement, it ends the function immediately
+  PARAMETER:
+      - puts a value into a function
+      -synntax: function functionname(parameter1, parameter2 = default value){}
+      -it exists only inside the functions scope 
+
+OBJECTS:
+      -an object groups multiple values together.
+      -syntax: {propertyname1: value1, propertyname2: value2};
+      -by using dot(.) we can access any particular element in the object.
+      -we can change the value of the properties.
+      -(property: value) combinely called property-value pair.
+      -by using delete.propertyname; ---> we can delete a property
+      -objectname.propertyname = value(without hipens); ---> can create a property-value pair.
+      -an OBJECT is another type of value.
+      -Objects are REFERENCES.
+            -when we create an Object, the actual value is created somewhere in the computer memory and the variable actually just gets a reference that points to the location in the computer memory.This is simple like having a shortcut to an app on our desktop. 
+            -this works like the way to make the language more efficient.
+            -when we want to copy an Object, JS do not copy entire Object instead it will copy the reference of the Object as copying the entire Object is difficult.This is called COPY BY REFERENCE.
+            -example: const object1 ={message: "hello"}
+                      object1.message = "good job";
+                      console.log(object1);      ---> message: goodjob  
+                  --->In the above example, we declared a variable using CONST so we cannot change the value.But the value on the output is changed.That is because the object1 variable contains the reference that pointout to the object so CONST prevents us from changing the reference in the variable but it doesn't prevent us from reaching into the reference and changing the object thats it pointing.
+      -we cant compare Objects directly.
+
+   WHY WE USE OBJECTS?
+      -we use objects, to make our code organised.
+      -this will save creation of large number of diff-variables in our code.
+      -we can group relevant values under an object.
+      
+      -we can accesss the values inside the object by using BRACKET NOTATION.
+      -syntax: console.log(Objectname['propertyname']);
+      -we use BRACKET NOTATION for the properties that do not work with the DOT NOTATION.
+      -we can also add values to the objects when we create it by using BRACKET NOTATION.The square brackets are optinal, the code will work without [].
+      -syntax: {name: 'shirt', ['delivery-time': '1-day']};
+      -Inside an Object we can save any type of value.Because, Object is itself a value.Means, and also this is called NESTED OBJECT.
+      -syntax: {name: 'tarak', 'age': 18, education{secondary: 9.8, intermediate: 10, b.tech: 7.06}}
+      -To access inner Objects, we use dot/bracket notations.
+      -We can also put other type of values like functions inside Objects.
+      -syntax: {fun: function function1(){
+                  console.log("function inside object")
+                  }
+               }
+      -To access the function ---> Objectname.fun();
+      -FUNCTION INSIDE AN OBJECT IS CALLED 'METHOD'.
+      -console.log() ---> console is a JS Object.
+                     ---> console.log is a function inside an Object/Method
+      
+BUILT-IN-OBJECTS:
+      
+      -The Objects which are built in to the language and provided by the language are called as BIO.
+      -console, math are the examples.
+      -we use 2 more BIO now ---> JSON, localStorage, Window.
+
+   JSON(JavScriptObjectNotation):
+
+      -This object, which helps us to work with JSON.
+      -It,s a similar syntax toa JS Object but has less features.
+      -JSON doesn't support single quotes and functions.
+     WHY WE USE JSON?
+      -A JSObject only makes sense in JS language but whereas JSON is UNIVERSAL and can be understand by all languages.So, that is the reason we use JSON while we send data b/w two computers.
+      -we use JSON, when we store data.
+
+     Bult-in-JSON-Object:
+
+      -we use JSON built-in-object to convert JS Object into JSON.
+      -syntax: console.log(JSON.stringify(ObjectName)); ---> stringify is a method of the JSON Object.
+
+      -To convert a JSON into JS Object.
+      -syntax: console.log(JSON.parse(JSON.stringify(ObjectName)));
+
+   localStorage:
+      -used to save values more permanently
+      -variables are temporary, if we refreshed/closed the page all the variables are deleted.
+      -the data saved in localStorage do not delete by refreshing the page.
+      -localStorage only supports STRINGS.
+      -To save a value inside  localStorage object we have a method called setItem().
+      -syntax: localStorage.setItems(stringName, valuetosave);
+            --->stringName is used to access the valuetosave.
+      -when we search for a value which doesn't exist in localStorage the output will be a NULL.
+
+   Window:
+      -Window Object represents the BROWSER.
+      -Inside the browser we have webpage, console, popup windows.
+      -Everything inside the browser will be inside the window object.So, we learned web page is inside the document object.Hence, document object is inside window object.
+      syntax: window.document       ---> is same as document.featurename
+              window.console        ---> is same as console.log 
+              window.alert          ---> is same as alert function
+
+
+
+Auto-Boxing:
+      
+      -Not only Objects have properties and methods.
+      -A String can also have properties and methods by using AUTO-BOXING feature.
+      -Auto-Boxing is a JS Special Feature.
+      -this feature automatically wraps the string into a Object first and this object can have properties and methods required.
+      -this will work for string,number,booleans.
+      -this does not work with null and undefined.
+
+Object(SHORTCUTS):
+
+      1.Destructuring:
+            - we can use destructuring for multiple properties.
+            -example: const object4 = {message: 'hello'};
+                      const message = object4.message;   
+                      ---> storing the message property value in new variable called message.
+                      ---> If both new variable name is same as property name then we can use this shortcut.
+                      const { message } = object4;
+      2.Shorthand Property:
+            -example: const object5 = {//message: message --->storing variable messsage value into property named message. 
+                                       message,           --->shorthand property
+                                       //method: function functionName(){
+                                          console.log('method')
+      3.Shorthand Method:                                    
+                                          method()        --->shorthand method
+                                          console.log('method')
+                                          }};
+      
+DOCUMENT OBJECT MODEL(DOM):
+
+      -one of the feature of JS.
+      -this is a built-in Object called document Object in JS.
+      -Document Object represents the WEB PAGE.
+      -example: document.body.innerHTML = "hello";
+            ---> here, document Object is linked to the webpage.When we run this line, the webpage will changes.
+      -Hence, the document object represents/models the webpage.
+      -Document Object is same as like the Objects which have properties and even we can use methods with them.
+      -DOM is actually combines HTML and JS together and it gives JS control of the webpage.
+      -When an HTML element is inside JS.Then the HTML element is converted into JS Object.And these can have properties and methods.
+            example: console.log(typeof document.body);   --->cosole: Object
+      -Every HTML element actually has a property called inner.HTML which let us control the element.
+      -Every HTML element has another property called .classList which gives us the control of the class attribute.The .classList is itself an Object so, it have some properties and methods.
+      -Whenever we get a value from the DOM, the value will be a STRING. we need to convert to integer before performing calculation on that variables.
+   
+   Properties:
+
+      1.document.title - this will give us the title at the top of the tabs.
+      2.document.body - this will get the HTML body element and put inside the JS.
+                      - By using this, we can have HTML in our JS.
+      3.document.body.innerHTML - this will get the entire HTML code which is present.
+                                - we can change the entire HTML code in the body element easily.
+                                -we can also replace the HTML code not just with the text but also we can replace it with the another code.
+                                -document.body.innerHTML = '<button>Good Job</button>';
+      4.document.innerText - this will get only the entire text present in the element and do not consider any                    spaces are present inside the element.
+      
+
+   Methods:
+
+      1.document.querySelector() -let us get any element from the page and put it inside JS.
+                                 -example: console.log(document.querySelector('button'));
+                                 -console.log(document.querySelector('button').innerHTML);  
+                                    ---> the above will get the inner HTML of button element.
+                                 -when we have same elements more then one on our code.The document.querySelector() method can only take the first element of the same.If you want to apply this method gor the rest of the same element, then we need to include a CLASS ATTRIBUTE inside that element and use.
+                                 -example:
+                                    <body>
+                                          <button>hello</button>
+                                          <button class="js-button">second button</button>
+
+                                          <script>
+                                                console.log(document.querySelector('button').innerHTML);
+                                                   --->hello
+                                                console.log(document.querySelector('.js-button').innerHTML);
+                                                   --->second button
+                                          </script>
+                                    </body>
+                                    --->In the above code, we have created a CLASS attribute called "js-button".This is some sort of adding a label to that button.And the DOT(.) is an indicator for a CLASS attribute.
+      
+EVENT & EVENT LISTNERS: 
+      
+      --HTML has another attribute called onkeydown=""; which runs JS when we press a keydown on our keyboard.
+            example: <input placeholder="Cost of the order" onkeydown="console.log("Typing");"> 
+                  --->This will display 'Typing'  on the console when we are giving input in the text bar.
+      -clicks,keydowns are known as EVENTS. onclick,onclickdown are known as EVENT LISTENERS.
+      -Event Listeners check for the events and runs JS when those events happen.
+      -Every event listener gets an EVENT OBJECT.
+            example: <input placeholder="Cost of the order" onkeydown="console.log(event);">
+                  --->This will display each event.Means, whatever the input we are typing inside the  text bar.
+
+STRINGS:
+      -String() ---> Toconvert any datatype into a string.
+      -If a string only contains a number and we - or * or / .Then, JS automatically converts that string to a number and peform the operaiton.This is called TYPE COERCION.
+      example: console.log("25"  - 5);  o/p: 20
+
+ARRAYS:
+      -an another type of value in JS.
+      -it represents a list of other values.
+   syntax: const myArray = [10,20,30, 40, 50];   --->array of 5 elements
+      -An array itself is a value, which means we can save them in a varaibles.
+      -We can access any value of an array by index number(which starts from 0).
+      -We can also chage particular value by using index number.
+      -In an Array, we can put any type of value.(number, string, boolean, object)
+            --->[1, "hello", true, {name: "tarak"}, [1, "hello", true]]
+      -Actually an array is an OBJECT(a special type of object).This is why, when you typeof an array it will give output as object.And arrays also have property and methods.
+            --->console.log(typeof [1,2]);      o/p:Object 
+      -So, we use console.log(Array.isArray([1,2]));   --->To check the datatype of an array
+      -arrayName.push()    --->To add a new value at last of an array
+      -arrayName.splice(index number to remove, how many consecutive numbers to remove)  
+            --->To remove a value at particular index of an array.
+            example: myArray.splice(0,3);     o/p:[40, 50]
+      -Arrays are REFERENCES like Objects.
+            example: 
+                  --->The below line, [1, 2, 3] is stored somewhere in the memory and the varaiable array1 is pointed to the reference of the original value.So, when we change array2 value the array1 value will be changed as both of them ponits to the same reference.
+
+                     const array1 = [1, 2, 3];
+                     const array2 = array1;
+                     array2.push(4);
+                     console.log(array1);             o/p: [1, 2, 3, 4]
+                     console.log(array2);             o/p: [1, 2, 3, 4]
+
+                  --->To avoid this behaviour we need to copy the value of the array1 to array2.Then both the varaibles points to two different references.So, we use a method called slice().
+
+                     console array2 = array1.slice();
+      -Shortcut method of De-structuring:
+
+            const [firstvalue, secondvalue] = [1,2];
+             
+                  --->The above line directly stores 1 in firstvalue ans 2 in secondvalue.
+
+      -ARRAY METHODS:
+
+            1.filter():
+                -works same as the forEach() loop.
+                -this has 2 parameters:
+                        -value
+                        -index
+                -filter() will create a new array.If the return value is true, that value will be kept in that array.I the value is false, it will not keep the value in the array.
+
+                example:
+
+                console.log([1, -3, 5].filter((value, index) => {
+                  return true;
+                }));
+
+                o/p:[1, -3, 5]
+
+            2.map():
+              
+              -map() will create a new array.If the return value is true, that value will be kept in that array.I the value is false, it will not keep the value in the array.
+
+                example:
+
+                console.log([1, 2,3].map((value, index) => {
+                  return value * 2;
+                }));
+
+                o/p:[2, 2, 6]
+
+LOOPS:
+
+      1.WHILE:
+            -the code will execute till the condition is true.Execution stops only when the condition is false.
+                  Syntax: 
+                  let i = 1;                 --->loop variable
+                  while(condition){          --->loop condition
+                              (code)
+                        }
+            -if the increment step is not incuded inside the loop, then the code for infinite times.
+            -ITERATION: means a complete 1 cycle of the code run.
+            -Loops create SCOPE.Any varaiable which is created inside the {} brackets will only exists inside that brackets.
+      
+      2.FOR:
+            -This is just a shorter version of WHILE loop.
+            -The mechanism is same as like while loop.
+            -This will iterate through each and every element.
+                  Syntax:
+                  for(let i=1, i<=5, i++){
+                        (code)
+                  }
+      
+      WHILE vs FOR Loop:
+            -If the loop is a standard ---> use FOR loop
+            -If the loop is not a standard ---> use WHILE Loop
+            ---> The loop which does not contain any increment variable and increment steps those are called Non-standard loops.
+                  example:
+                        let randomNum = 0;
+                        while (randomNum < 0.4){
+                              randomNum = Math.random();
+                        } 
+                        console.log(randomNum);
+      
+      Looping through an Array:
+            
+            1.ACCUMULATOR Pattern:
+                  --->Create a variable to store the result.
+                  --->Loop through the Array and update the result.
+
+            2.forEach():
+                  -This is a function same as like while, for.
+                  -It will loop through  each and every element.
+                  -Actually this is the preferred way to loop through an array.
+                  -We can also give another parameter to the function.That is a index number/position.
+                  -We cannot use CONTINUE inside this loop.Instead we can use RETURN statement.Return in forEach() loop will skip a run and execute next lines.
+                  -Using BREAK statement in this loop is very difficult.So,if you wanted to have a break statement then it is preferred to use for loop only.
+
+                  syntax: ['make dinner', 
+                          'wash dishes', 
+                          'watch youtube'].forEach(function(value, index){
+                              if (value === 'wash dishes'){
+                                    return;
+                              }
+                              console.log(index);
+                              console.log(value);
+                          });
+
+                  -In the above example, we created an array and used the function forEach() to it. And also we given another function called function along with a parameter(value).
+                  -forEach() will works in such a way that it will take and tore/pass the elements of the array to the value parameter and runs the function according to the parameter value i.e; array elements.
+
+      -BREAK: To exit a loop early.
+      -CONTINUE: skip 1 iteration/ 1 run of the loop.
+      -RETURN: To get a value as an output.
+               --->This is one of the method to break the loop when it is inside a function. 
+
+ADVANCED Functions:
+
+      -Functions are VALUES like numbers,strings,boolean etc.Means we can save a function inside a varaible.
+
+            example: const function1 = function greeting(){
+                                          console.log("hello");
+                     };
+                     console.log(function1);          o/p: hello
+                     console.log(typeof function1);   o/p: function
+                     function1();                     o/p: hello
+
+      -In JS, as long as there is a way to access the function then there is no need to hava a function name.
+            --->So, in the above example as we can use function1(); to call it then, there is no need of greeting().This is called ANONYMOUS FUNCTION.(A function without a name)
+
+            exaple: const function1 = function(){
+                                         console.log("hello");
+                    };
+
+      -Hoisting: This feature enable us to calla function before it is created.This   will not work for the functions that are stored in variables.(like above one)
+
+      example: greeting();
+               function greeting(){
+                  console.log("hello");
+               }
+
+      -We can also save a function inside an Object.
+            
+            example:    const object =
+                        {nums: 2, 
+                        fun: function greeting(){console.log("hello");}
+                        };
+
+                        object.fun();           o/p: hello
+
+                        --->Here the fun function is also calles as a METHOD as it is inside an Object.And aslo greeting name is not required.
+
+      -We can also pass a value inside a function by naming it as PARAMETER.Hence, we can store a function inside a function.
+
+            example1: --->passing a value into a function
+                        
+                        function display(para){
+                           console.log(para);
+                        }
+
+                        display(2);                         o/p: 2
+      
+            example2: --->Passing a function into another function.
+            
+                        function display(para){
+                           para();
+                        }
+                        display(function (){          
+                              console.log("hello");         o/p: hello
+                        });   
+
+                        ---> The function that was passed inside is called a CALLBACK.Here, function() is termed as a callback function.
+
+      setTimeout():  
+
+            -A feature and a built-in function in JS.Which allow us to run a function in future.
+            -It takes 2 parameters:
+                  1.The function we want to run in future.
+                  2.How long to wait before running this function.(A number in milliseconds.1000 milliseconds = 1 second)
+
+                  example:    
+                  
+                        setTimeout(function() {
+                              console.log("timeout");
+                        }, 3000);                          
+
+                        --->The above function will takes 3 seconds to call the function.
+
+      CLOSURE:
+
+            -Means, if a function has access to a value then it will always have the access of that value.The value gets packaged together (enclosed) with the function.                  
+
+      ASYNCHRONOUS CODE:
+            - The computer wont wait for a line to finish before going to the next line.
+                  example:
+
+                        setTimeout(function() {
+                              console.log("timeout");
+                        }, 3000); 
+
+                        console.log("finished");            o/p: finished
+                                                                 timeout
+
+      SYNCHRONOUS CODE:
+            - The computer will wait for a line to finish before going to the next line.
+
+      setInterval():
+
+            -It will keep running a function in future.
+            -It also takes 2 parameters same as like setTimeout().
+            -This is also a ASYNCHRONOUS code.
+            -It actually returns a number.And this number is like an ID, which use it to stop the interval.And also everytime we run this function it gives us a different ID to save this we created a variable intervalId outside of the function.
+            example:
+                  setTimeout(function() {
+                              console.log("interval");
+                        }, 3000);
+                  
+                  console.log("hello");                       o/p:hello
+                                                                  interval
+                                                                  interval
+                                                                  ........
+                                                                  ............
+                  
+                  --->The above function will call the function for every 3 seconds.
+
+      clearInterval() - To stop an interval we use thisfunction.
+
+      ARROW FUNCTIONS:
+            
+            -A shorter way to write the functions.
+            -We can use this when we are writing a function inside a function.
+            syntax: 
+            
+                  const varaibleName = () => {     --->variableName = variable name
+                        console.log('hello');      --->Parameters are given inside()
+                        return(5);       
+                  }
+                  varaibleName();                  --->calling the function 
+
+
+            -We can give multiple parameters and Return statement.
+            -We can use this function inside an OBJECT also.The below methosd is good for dealing with OBJECTS.
+            syntax:  
+
+                  const objectName = {
+                        method: () =>{
+
+                        },
+                        method{
+
+                        }
+                  };
+
+         SHORTCUTS:   
+            -If we have only one parameter inside the arrow function the () are optional.
+            -If the arrow function code is in a single line we can remove () and can write return statement in the same line.And even return can be removed.
+
+                  example: 
+
+                     const oneLine = () => {    |  const oneLine = () => 2+3;
+                        return 2+3;             |
+                     }                          |
+
+            -addEventListener():
+
+                  -let us run the code when we interact with the elemment.
+                  -It actually does the same thing like onclick="";
+                  -This has 2 parameters:
+                        1.Event - what type of interaction we want to listen for.
+                        2.A FUNCTION we want ro run.
+
+                  syntax: 
+
+                  HTML:
+                  <button class="js-button"></button>
+
+                  JS:
+                  const buttonElement=document.querySelector(".js-button");
+                  buttonElement.adddEventListener("click", () =>{
+                        console.log("click");
+                  });
+                  
+            ADVANTAGES:
+                  -We can add multiple event listeners for an event.
+
+                        example:
+                        const buttonElement=document.querySelector(".js-button");
+                        buttonElement.adddEventListener("click", () =>{
+                              console.log("click1");
+                        });
+                        const buttonElement=document.querySelector(".js-button");
+                        buttonElement.adddEventListener("click", () =>{
+                              console.log("click2");
+                        });
+
+                  -We can remove an event listener using function called .removeEventListener()
+                  -addEventListener() provides an EVENT Object as a parameter to that function.
