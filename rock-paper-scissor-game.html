@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>RPS Game</title>
+    <link rel="stylesheet" href="rock-paper-scissor-game.css" />
+  </head>
+  <body>
+    <p class="title">Let's play Rock Paper Scissor!</p>
+    <button onclick=" resultCheck('ROCK')" class="button-css">
+      <img src="emoji/rock-emoji.png" class="emoji-css" />
+    </button>
+
+    <button onclick=" resultCheck('PAPER')" class="button-css">
+      <img src="emoji/paper-emoji.png" class="emoji-css" />
+    </button>
+
+    <button onclick="resultCheck('SCISSORS')" class="button-css">
+      <img src="emoji/scissors-emoji.png" class="emoji-css" />
+    </button>
+
+    <p class="js-result result-css"></p>
+    <p class="js-choosen choosen-css"></p>
+    <p class="js-scoreboard score-css"></p>
+
+    <button
+      onclick="
+      battleRecord.wins = 0; 
+      battleRecord.lost = 0; 
+      battleRecord.draw = 0; 
+      /*Here, we are removing the battleRecord value from localStorage when we click on RESET button*/
+      localStorage.removeItem('battleRecord');
+      updateScoreboard();"
+      class="reset-button-css"
+    >
+      RESET
+    </button>
+    <button class="auto-play-button-css" onclick="autoPlay();">
+      AUTO PLAY
+    </button>
+
+    <script src="rock-paper-scissor-game.js"></script>
+  </body>
+</html>
